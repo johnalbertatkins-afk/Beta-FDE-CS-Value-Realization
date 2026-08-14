@@ -1121,7 +1121,7 @@ def page_home(worklist):
     st.markdown(f"""
       <div class="ac-hero">
         <h1>See which customers are drifting off the adoption and value realization path, multiple quarters before the contract discussion.</h1>
-        <p>This Agent learns what a winning account looks likein real time evaluating multiple signals across all accounts and history to learn when, what and how to take actions
+        <p>This Agent learns what a winning account looks like in real time evaluating multiple signals across all accounts historically.  It will learn when, what and how to take actions
         to materially have customers succeed and realize value.  The solution places every live account on that curve, and turns the gap into a ranked, owner-assigned 
         action plan for forward deployed engineers and customer success teams.</p>
       </div>
