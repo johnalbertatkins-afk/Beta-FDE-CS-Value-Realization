@@ -15,7 +15,7 @@
 #
 # HOW IT IS ORGANISED (read top to bottom)
 # ----------------------------------------
-#   PART A - Configuration defaults + brand tokens + colour thresholds
+#   PART A - Configuration defaults + brand tokens + color thresholds
 #   PART B - The engine: pure functions, no web code (unchanged model logic)
 #   PART C - Caching wrapper so navigation is instant
 #   PART D - The web pages (branding, navigation, and each screen)
@@ -107,7 +107,7 @@ RED    = "#C0392B"   # at risk
 # --- Red / Amber / Green thresholds -----------------------------------------
 # Severity is measured in "spreads" (IQRs) outside the winning band. A driver is
 # only recorded once it is more than 0.25 spreads off. These two lines decide a
-# single DRIVER's colour in the action plan, and are adjustable (Assumptions).
+# single DRIVER's color in the action plan, and are adjustable (Assumptions).
 YELLOW_SEV = 0.25    # at/above this and below RED = amber (needs attention)
 RED_SEV    = 1.00    # at/above this = red (clearly off target)
 
@@ -457,7 +457,7 @@ def severity_status(sev):
 
 
 def account_risk_band(drivers):
-    """Roll a list of off-target drivers up to one account-level colour.
+    """Roll a list of off-target drivers up to one account-level color.
 
     Rule (simple and adjustable): any clearly-off (red) driver makes the account
     At risk; otherwise one or more amber drivers make it Needs attention;
@@ -684,7 +684,7 @@ METRIC_WHY["__relationship__"] = "A weak or missing senior relationship puts the
 
 
 def build_action_plan(account_id, plan):
-    """Layer 4 (placeholder). One row per off-target driver: colour, owner, the
+    """Layer 4 (placeholder). One row per off-target driver: color, owner, the
     number to move, and current-vs-winning in plain words. 'Recommended play' is
     intentionally blank - that slot is filled by your team's play library.
     """
@@ -830,7 +830,7 @@ def logo_img_tag(path, max_height_px):
 def inject_page_background(page):
     """Paint a muted, fixed, full-page photo behind the current page.
 
-    A near-opaque scrim (the page's own base colour at BG_SCRIM alpha) sits ON
+    A near-opaque scrim (the page's own base color at BG_SCRIM alpha) sits ON
     TOP of the photo to mute it, and a faint dot grid adds texture. Cards, the
     hero, tables, and the sidebar are all solid white, so they stay in the
     foreground and text stays easy to read. If no image is available for the
@@ -936,7 +936,7 @@ def inject_css():
       @media (prefers-reduced-motion: reduce) {{ * {{ animation:none !important; transition:none !important; }} }}
 
       /* Stronger contrast for text that sits on the page background (not in boxes).
-         Boxed/table/tier text sets its own colour and is unaffected. */
+         Boxed/table/tier text sets its own color and is unaffected. */
       h1, h2, h3, h4 {{ color:{INK} !important; }}
       [data-testid="stCaptionContainer"] p, [data-testid="stCaptionContainer"] {{ color:#33424C !important; }}
       .stMarkdown p, .stMarkdown li {{ color:#22303A; }}
@@ -1263,7 +1263,7 @@ def _quadrant_fig(df, big=False):
     """Interactive risk (vertical zones) vs time-to-renewal (horizontal) chart.
 
     One marker per account. Vertical position is driven by the RISK BAND, not the
-    raw gap, so colour and height always agree: green in the top zone, amber in the
+    raw gap, so color and height always agree: green in the top zone, amber in the
     middle, red at the bottom. Within a zone a bigger gap sits a little lower; tiny
     jitter stops bubbles overlapping. Hover shows the account; a click opens its plan.
     """
@@ -1733,11 +1733,11 @@ def page_assumptions():
                 "can move forward.</div>", unsafe_allow_html=True)
     st.write("")
 
-    st.subheader("What the colours mean")
+    st.subheader("What the colors mean")
     risk_legend()
-    st.write("Two different things carry a colour, and they are set differently on purpose.")
+    st.write("Two different things carry a color, and they are set differently on purpose.")
     st.markdown(
-        f"**A single signal** inside an account's plan is coloured by how far it sits "
+        f"**A single signal** inside an account's plan is colored by how far it sits "
         f"outside the winning range, measured in \"spreads\" (the normal range of the "
         f"winning group): <b style='color:{GREEN}'>green</b> within or better than the "
         f"range, <b style='color:{AMBER}'>amber</b> modestly outside, and "
