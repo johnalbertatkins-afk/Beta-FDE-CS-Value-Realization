@@ -1121,9 +1121,10 @@ def page_home(worklist):
     st.markdown(f"""
       <div class="ac-hero">
         <h1>See which customers are drifting off the adoption and value realization path, multiple quarters before the contract discussion.</h1>
-        <p>Atkins Consulting learns what a winning account looks like at each quarter of its
-        contract, places every live account on that curve, and turns the gap into a ranked,
-        owner-assigned action plan. Built for customer success and forward deployed engineering teams.</p>
+        <p>This Agent learns what a winning account looks likein real time evaluating multiple signals across all accounts and history to learn 
+        when, what and how to take actions to materially have customers succeed and realize value.
+        The solution places every live account on that curve, and turns the gap into a ranked,
+        owner-assigned action plan for forward deployed engineers and customer success teams.</p>
       </div>
     """, unsafe_allow_html=True)
     st.write("")
