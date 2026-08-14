@@ -1405,7 +1405,6 @@ def page_portfolio(worklist):
     with left:
         st.pyplot(_quadrant_chart(df))
     with right:
-        st.markdown("<div class='ac-eyebrow'>Open a cell</div>", unsafe_allow_html=True)
         st.caption("Click a cell to see just those accounts, expanded.")
         for band in ["On track", "Needs attention", "At risk"]:
             for soon in (True, False):
